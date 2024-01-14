@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:translate_app/core/utils/app_colors.dart';
 import 'package:translate_app/core/utils/app_string.dart';
 
 class TranslateApp extends StatelessWidget {
@@ -10,7 +11,10 @@ class TranslateApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: AppString.appName,
       theme: ThemeData(
-        useMaterial3: false,
+          useMaterial3: false,
+          appBarTheme: AppBarTheme(backgroundColor: AppColor.mainColor)),
+      home: Scaffold(
+        appBar: AppBar(),
       ),
     );
   }
