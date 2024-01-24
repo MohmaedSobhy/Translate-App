@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:translate_app/core/theme/app_theme.dart';
 import 'package:translate_app/core/utils/app_string.dart';
 
+import 'feature/splash/presentation/screens/splash_screen.dart';
+
 class TranslateApp extends StatelessWidget {
   const TranslateApp({super.key});
 
@@ -11,9 +13,7 @@ class TranslateApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: AppString.appName,
       theme: AppTheme.appTheme,
-      home: Scaffold(
-        appBar: AppBar(),
-      ),
+      home: const SplashScreen(),
     );
   }
 }
