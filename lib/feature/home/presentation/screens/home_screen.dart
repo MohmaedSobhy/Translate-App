@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:translate_app/core/utils/app_string.dart';
-import 'package:translate_app/feature/home/presentation/views/button_animation_view.dart';
+import 'package:translate_app/feature/home/presentation/views/home_body_view.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -15,19 +15,7 @@ class HomeScreen extends StatelessWidget {
           icon: const Icon(Icons.menu),
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: MediaQuery.sizeOf(context).width * 0.02,
-        ),
-        child: const Column(
-          children: [
-            SizedBox(
-              height: 20,
-            ),
-            ButtonView(),
-          ],
-        ),
-      ),
+      body: const HomeBodyView(),
     );
   }
 }
