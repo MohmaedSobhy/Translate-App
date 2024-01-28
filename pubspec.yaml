@@ -23,6 +23,12 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "images/logo.png"
+  generate : true
+
 flutter:
   uses-material-design: true
   assets:
