@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 
 class CountryWidget extends StatelessWidget {
   final String languageName, imagePath;
-  final bool leftDirection;
 
   const CountryWidget({
     super.key,
     required this.imagePath,
     required this.languageName,
-    this.leftDirection = true,
   });
 
   @override
@@ -16,14 +14,11 @@ class CountryWidget extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Visibility(
-          visible: leftDirection == true,
-          child: Padding(
-            padding: const EdgeInsets.all(6),
-            child: CircleAvatar(
-              radius: 15,
-              backgroundImage: AssetImage(imagePath),
-            ),
+        Padding(
+          padding: const EdgeInsets.all(6),
+          child: CircleAvatar(
+            radius: 15,
+            backgroundImage: AssetImage(imagePath),
           ),
         ),
         Text(
@@ -31,16 +26,6 @@ class CountryWidget extends StatelessWidget {
           style: const TextStyle(
             color: Colors.black,
             fontSize: 16,
-          ),
-        ),
-        Visibility(
-          visible: !leftDirection,
-          child: Padding(
-            padding: const EdgeInsets.all(6),
-            child: CircleAvatar(
-              radius: 15,
-              backgroundImage: AssetImage(imagePath),
-            ),
           ),
         ),
       ],

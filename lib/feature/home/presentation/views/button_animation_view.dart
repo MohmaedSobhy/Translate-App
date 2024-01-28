@@ -19,7 +19,6 @@ class ButtonView extends StatelessWidget {
           const CountryWidget(
             languageName: 'English',
             imagePath: 'images/code.png',
-            leftDirection: true,
           ),
           IconButton(
             onPressed: () {},
@@ -32,7 +31,6 @@ class ButtonView extends StatelessWidget {
           const CountryWidget(
             languageName: 'Spanish',
             imagePath: 'images/code.png',
-            leftDirection: false,
           ),
         ],
       ),
