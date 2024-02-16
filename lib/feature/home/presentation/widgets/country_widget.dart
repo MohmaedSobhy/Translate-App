@@ -15,14 +15,11 @@ class CountryWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Padding(
-          padding: const EdgeInsets.all(6),
+          padding: const EdgeInsets.all(8),
           child: CircleAvatar(
             radius: 20,
             backgroundImage: AssetImage(imagePath),
           ),
-        ),
-        const SizedBox(
-          width: 5,
         ),
         Text(
           languageName,
