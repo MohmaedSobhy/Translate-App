@@ -3,8 +3,6 @@ import 'package:translate_app/core/theme/app_theme.dart';
 import 'package:translate_app/core/utils/app_string.dart';
 import 'package:translate_app/feature/home/presentation/screens/home_screen.dart';
 
-import 'feature/splash/presentation/screens/splash_screen.dart';
-
 class TranslateApp extends StatelessWidget {
   const TranslateApp({super.key});
 

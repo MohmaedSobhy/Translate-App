@@ -17,7 +17,7 @@ class CountryWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(6),
           child: CircleAvatar(
-            radius: 15,
+            radius: 18,
             backgroundImage: AssetImage(imagePath),
           ),
         ),

@@ -17,9 +17,9 @@ class _ButtonViewState extends State<ButtonView>
   bool fadeIn = false;
 
   LanguageModel firstLanguage =
-      LanguageModel(code: 'en', image: 'images/code.png', language: 'English');
-  LanguageModel secondLanguage =
-      LanguageModel(code: 'en', image: 'images/code.png', language: 'Spanish');
+      LanguageModel(code: 'en', image: 'images/egypt.png', language: 'Egypt');
+  LanguageModel secondLanguage = LanguageModel(
+      code: 'en', image: 'images/argentine.png', language: 'Turkey');
 
   @override
   void initState() {
