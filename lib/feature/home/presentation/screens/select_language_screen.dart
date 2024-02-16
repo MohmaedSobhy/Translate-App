@@ -12,7 +12,7 @@ class SelectLanguageScreen extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size(
           double.infinity,
-          MediaQuery.sizeOf(context).height * 0.12,
+          MediaQuery.sizeOf(context).height * 0.10,
         ),
         child: const SelectLanguageAppBarView(),
       ),
