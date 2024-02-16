@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:translate_app/feature/home/presentation/views/select_language_app_bar_view.dart';
+import 'package:translate_app/feature/home/presentation/views/select_language_body_view.dart';
 
 class SelectLanguageScreen extends StatelessWidget {
   const SelectLanguageScreen({super.key});
@@ -15,6 +16,7 @@ class SelectLanguageScreen extends StatelessWidget {
         ),
         child: const SelectLanguageAppBarView(),
       ),
+      body: const SelectLanguageBodyView(),
     );
   }
 }
