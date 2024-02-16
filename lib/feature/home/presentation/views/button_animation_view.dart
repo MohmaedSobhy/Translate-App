@@ -3,18 +3,17 @@ import 'package:translate_app/core/utils/app_colors.dart';
 import 'package:translate_app/feature/home/data/model/language.dart';
 import 'package:translate_app/feature/home/presentation/widgets/country_widget.dart';
 
-class ButtonView extends StatefulWidget {
-  const ButtonView({super.key});
+class ButtonAnimationView extends StatefulWidget {
+  const ButtonAnimationView({super.key});
 
   @override
-  State<ButtonView> createState() => _ButtonViewState();
+  State<ButtonAnimationView> createState() => _ButtonAnimationViewState();
 }
 
-class _ButtonViewState extends State<ButtonView>
+class _ButtonAnimationViewState extends State<ButtonAnimationView>
     with SingleTickerProviderStateMixin {
   // ignore: unused_field
   late AnimationController animationController;
-  bool fadeIn = false;
 
   LanguageModel firstLanguage = LanguageModel(
       code: 'en', image: 'images/egypt.png', languageName: 'Egypt');

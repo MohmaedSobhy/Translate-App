@@ -15,7 +15,7 @@ class HomeBodyView extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          ButtonView(),
+          ButtonAnimationView(),
         ],
       ),
     );
