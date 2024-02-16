@@ -16,10 +16,10 @@ class _ButtonViewState extends State<ButtonView>
   late AnimationController animationController;
   bool fadeIn = false;
 
-  LanguageModel firstLanguage =
-      LanguageModel(code: 'en', image: 'images/egypt.png', language: 'Egypt');
+  LanguageModel firstLanguage = LanguageModel(
+      code: 'en', image: 'images/egypt.png', languageName: 'Egypt');
   LanguageModel secondLanguage = LanguageModel(
-      code: 'en', image: 'images/argentine.png', language: 'Turkey');
+      code: 'en', image: 'images/argentine.png', languageName: 'Turkey');
 
   @override
   void initState() {
@@ -48,7 +48,7 @@ class _ButtonViewState extends State<ButtonView>
               return FadeTransition(
                 opacity: animationController,
                 child: CountryWidget(
-                  languageName: secondLanguage.language,
+                  languageName: secondLanguage.languageName,
                   imagePath: secondLanguage.image,
                 ),
               );
@@ -72,7 +72,7 @@ class _ButtonViewState extends State<ButtonView>
               return FadeTransition(
                 opacity: animationController,
                 child: CountryWidget(
-                  languageName: firstLanguage.language,
+                  languageName: firstLanguage.languageName,
                   imagePath: firstLanguage.image,
                 ),
               );
