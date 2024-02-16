@@ -17,9 +17,12 @@ class CountryWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(6),
           child: CircleAvatar(
-            radius: 18,
+            radius: 20,
             backgroundImage: AssetImage(imagePath),
           ),
+        ),
+        const SizedBox(
+          width: 5,
         ),
         Text(
           languageName,
