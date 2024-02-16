@@ -1,9 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:translate_app/core/utils/app_colors.dart';
+import 'package:translate_app/feature/home/data/model/language.dart';
 import 'package:translate_app/feature/home/presentation/widgets/country_widget.dart';
 
-class ButtonView extends StatelessWidget {
+class ButtonView extends StatefulWidget {
   const ButtonView({super.key});
+
+  @override
+  State<ButtonView> createState() => _ButtonViewState();
+}
+
+class _ButtonViewState extends State<ButtonView>
+    with SingleTickerProviderStateMixin {
+  // ignore: unused_field
+  late AnimationController animationController;
+  bool fadeIn = false;
+
+  LanguageModel firstLanguage =
+      LanguageModel(code: 'en', image: 'images/code.png', language: 'English');
+  LanguageModel secondLanguage =
+      LanguageModel(code: 'en', image: 'images/code.png', language: 'Spanish');
+
+  @override
+  void initState() {
+    super.initState();
+    animationController = AnimationController(
+      duration: const Duration(microseconds: 500),
+      vsync: this,
+    );
+    animationController.forward();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,24 +42,61 @@ class ButtonView extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const CountryWidget(
-            languageName: 'English',
-            imagePath: 'images/code.png',
+          AnimatedBuilder(
+            animation: animationController,
+            builder: (context, _) {
+              return FadeTransition(
+                opacity: animationController,
+                child: CountryWidget(
+                  languageName: secondLanguage.language,
+                  imagePath: secondLanguage.image,
+                ),
+              );
+            },
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              _startAnimation();
+              swapContent();
+              setState(() {});
+            },
             icon: const Icon(
               Icons.compare_arrows,
               color: Colors.black,
               size: 30,
             ),
           ),
-          const CountryWidget(
-            languageName: 'Spanish',
-            imagePath: 'images/code.png',
+          AnimatedBuilder(
+            animation: animationController,
+            builder: (context, _) {
+              return FadeTransition(
+                opacity: animationController,
+                child: CountryWidget(
+                  languageName: firstLanguage.language,
+                  imagePath: firstLanguage.image,
+                ),
+              );
+            },
           ),
         ],
       ),
     );
+  }
+
+  void _startAnimation() {
+    animationController.reset(); // Reset the animation to its initial state
+    animationController.reverse();
+    animationController.reset();
+    animationController.forward(); // Start the animation from the beginning
+  }
+
+  void swapContent() {
+    firstLanguage.replaceContent(secondLanguage);
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
   }
 }
