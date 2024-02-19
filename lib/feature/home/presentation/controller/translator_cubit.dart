@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
+import 'package:translate_app/feature/home/data/model/available_language.dart';
 import 'package:translate_app/feature/home/data/model/language.dart';
 
 part 'translator_state.dart';
@@ -10,8 +11,8 @@ class TranslatorCubit extends Cubit<TranslatorState> {
   static TranslatorCubit? _instance;
   bool selectFirstLanguage = true;
 
-  LanguageModel firstLanguage = LanguageModel.availableLanguage[2];
-  LanguageModel secondLanguage = LanguageModel.availableLanguage[1];
+  LanguageModel firstLanguage = AvailableLanguage.availableLanguage[2];
+  LanguageModel secondLanguage = AvailableLanguage.availableLanguage[1];
   String currentCode = ' ';
   static TranslatorCubit getInstance() {
     _instance ??= TranslatorCubit._();
@@ -45,7 +46,7 @@ class TranslatorCubit extends Cubit<TranslatorState> {
   }
 
   void _selectFirstLanguage() {
-    for (LanguageModel item in LanguageModel.availableLanguage) {
+    for (LanguageModel item in AvailableLanguage.availableLanguage) {
       if (item.code == currentCode) {
         firstLanguage = item;
         break;
@@ -54,7 +55,7 @@ class TranslatorCubit extends Cubit<TranslatorState> {
   }
 
   void _selectSecondLanguage() {
-    for (LanguageModel item in LanguageModel.availableLanguage) {
+    for (LanguageModel item in AvailableLanguage.availableLanguage) {
       if (item.code == currentCode) {
         secondLanguage = item;
         break;

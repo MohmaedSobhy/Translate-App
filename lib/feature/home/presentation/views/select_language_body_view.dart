@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:translate_app/feature/home/data/model/language.dart';
+import 'package:translate_app/feature/home/data/model/available_language.dart';
 import 'package:translate_app/feature/home/presentation/views/select_language_item.dart';
 
 class SelectLanguageBodyView extends StatelessWidget {
@@ -12,7 +12,7 @@ class SelectLanguageBodyView extends StatelessWidget {
         horizontal: MediaQuery.sizeOf(context).width * 0.02,
       ),
       child: ListView.separated(
-        itemCount: LanguageModel.availableLanguage.length,
+        itemCount: AvailableLanguage.availableLanguage.length,
         separatorBuilder: (context, index) {
           return const Divider(
             color: Colors.grey,
@@ -20,7 +20,7 @@ class SelectLanguageBodyView extends StatelessWidget {
         },
         itemBuilder: (context, index) {
           return SelectLanguageItem(
-            language: LanguageModel.availableLanguage[index],
+            language: AvailableLanguage.availableLanguage[index],
           );
         },
       ),
